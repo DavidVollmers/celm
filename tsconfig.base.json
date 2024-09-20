@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cele/core": ["@cele/core/src/index.ts"]
+      "@cele/core": ["@cele/core/src/index.ts"],
+      "examples/lib": ["examples/lib/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
