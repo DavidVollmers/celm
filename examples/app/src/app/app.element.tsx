@@ -1,8 +1,9 @@
 import './app.element.css';
+import { Button } from 'examples-lib';
 
 export class AppElement extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `<example-button></example-button>`;
+    this.innerHTML = <Button></Button>;
   }
 }
 
