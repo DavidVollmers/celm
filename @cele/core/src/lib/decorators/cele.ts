@@ -1,13 +1,13 @@
-import { CElement, CElementType } from '../celement';
-
-export interface CElementDefinitionOptions {
-  readonly name: string;
-}
+import { CElement, CElementDefinition, CElementType } from '../celement';
 
 export function cele<T extends CElement>(
-  nameOrOptions: string | CElementDefinitionOptions,
+  nameOrDefinition: string | CElementDefinition,
 ) {
   return (target: CElementType<T>) => {
+    target.definition =
+      typeof nameOrDefinition === 'string'
+        ? { name: nameOrDefinition }
+        : nameOrDefinition;
     return target;
   };
 }
