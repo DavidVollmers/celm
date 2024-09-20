@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@cele/core": ["@cele/core/src/index.ts"],
+      "@cele/jsx": ["@cele/jsx/src/index.ts"],
       "examples-lib": ["examples/lib/src/index.ts"]
     }
   },

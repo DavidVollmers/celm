@@ -3,7 +3,11 @@ import { Button } from 'examples-lib';
 
 export class AppElement extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = <Button></Button>;
+    this.innerHTML = (
+      <Button size={'small'}>
+        Hello <b>World</b>!
+      </Button>
+    );
   }
 }
 
