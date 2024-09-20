@@ -1,3 +1,7 @@
+export { defaultCeleOptions } from './lib/cele-options';
+
+export type { CeleOptions } from './lib/cele-options';
+
 export { CElement } from './lib/celement';
 
 export type { CElementType, CElementDefinition } from './lib/celement';

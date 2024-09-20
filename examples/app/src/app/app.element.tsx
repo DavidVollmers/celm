@@ -3,10 +3,10 @@ import { Button } from 'examples-lib';
 
 export class AppElement extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = (
+    this.appendChild(
       <Button size={'small'}>
         Hello <b>World</b>!
-      </Button>
+      </Button>,
     );
   }
 }

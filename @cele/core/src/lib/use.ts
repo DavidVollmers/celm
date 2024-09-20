@@ -1,7 +1,9 @@
 import { CElement, CElementType } from './celement';
+import { CeleOptions, defaultCeleOptions } from './cele-options';
 
 export function use<T extends CElement>(
   element: CElementType<T>,
+  options: CeleOptions = defaultCeleOptions,
   ...args: any[]
 ): T {
   let name = element.definition?.name;
@@ -9,9 +11,9 @@ export function use<T extends CElement>(
     throw new Error('Element name is not defined');
   }
   if (name[0] === '-') {
-    //TODO prefix element name
-    name = name.slice(1);
+    name = options.prefix + name;
   }
-  customElements.define(name, element);
+  const existingElement = customElements.get(name);
+  if (!existingElement) customElements.define(name, element);
   return new element(...args);
 }
