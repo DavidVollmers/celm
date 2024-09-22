@@ -1,5 +1,6 @@
 import { CElement, CElementType, CeleOptions, use } from '@cele/core';
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 function isCElement(element: Function): boolean {
   return element.prototype instanceof CElement || isCElement(element.prototype);
 }
