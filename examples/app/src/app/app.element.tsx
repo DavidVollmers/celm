@@ -4,7 +4,7 @@ import { Button } from 'examples-lib';
 export class AppElement extends HTMLElement {
   connectedCallback() {
     this.appendChild(
-      <Button size={'small'}>
+      <Button onClick={() => console.log('Hello World!')}>
         Hello <b>World</b>!
       </Button>,
     );

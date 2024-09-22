@@ -1,5 +1,9 @@
 import { Button } from './button';
 
 export const buttonTemplate = function (this: Button) {
-  return <button></button>;
+  return (
+    <button>
+      <slot></slot>
+    </button>
+  );
 };

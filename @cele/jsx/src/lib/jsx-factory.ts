@@ -13,10 +13,10 @@ export class JsxFactory {
     props: {
       readonly [key: string]: string | number;
     },
-    ...children: (CElement | HTMLElement)[]
+    ...children: (Node | string)[]
   ): Node {
     console.log(jsxElement, props, children);
-    let element: HTMLElement;
+    let element: Node;
     if (typeof jsxElement === 'string')
       element = document.createElement(jsxElement);
     else if (isCElement(jsxElement)) element = use(jsxElement, this._options);
@@ -24,7 +24,10 @@ export class JsxFactory {
 
     //TODO add props to element
 
-    //TODO add children to element
+    for (const child of children) {
+      if (typeof child === 'string') element.appendChild(new Text(child));
+      else element.appendChild(child);
+    }
 
     return element;
   }
