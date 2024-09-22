@@ -4,7 +4,6 @@ inputs:
     default: ''
 runs:
   using: node20
-  main:
   steps:
     - run: nx lint ${{ inputs.project }}
       shell: bash
