@@ -6,7 +6,8 @@ export function use<T extends CElement>(
   options: CeleOptions = defaultCeleOptions,
   ...args: any[]
 ): T {
-  let name = element.definition?.name;
+  if (!element.definition) throw new Error('Missing element definition');
+  let name = element.definition.name;
   if (!name) {
     throw new Error('Element name is not defined');
   }
@@ -19,6 +20,6 @@ export function use<T extends CElement>(
     throw new Error(`Element ${name} already defined`);
   }
   const instance = new element(...args);
-  instance.initialize();
+  instance.initialize(element.definition);
   return instance;
 }

@@ -10,9 +10,14 @@ export abstract class CElement extends HTMLElement {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   protected onInit(): void {}
 
-  public initialize(): void {
+  public initialize(definition: CElementDefinition<this>): void {
     if (this._initialized) throw new Error('Element already initialized');
     this._initialized = true;
+    if (definition.shadow !== false)
+      this.attachShadow({
+        mode: 'open',
+        ...definition.shadow,
+      });
     this.onInit();
   }
 }

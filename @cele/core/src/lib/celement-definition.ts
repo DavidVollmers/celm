@@ -9,4 +9,5 @@ export type CElementTemplate<T extends CElement> =
 export interface CElementDefinition<T extends CElement> {
   readonly name: string;
   readonly template?: CElementTemplate<T>;
+  readonly shadow?: false | Partial<ShadowRootInit>;
 }
