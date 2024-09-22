@@ -41,6 +41,10 @@ export default defineConfig({
     rollupOptions: {
       // External packages that should not be bundled into your library.
       external: ['@cele/core'],
+      output: {
+        preserveModules: true,
+        entryFileNames: '[name].js',
+      },
     },
   },
 
