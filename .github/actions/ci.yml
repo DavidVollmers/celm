@@ -1,0 +1,7 @@
+name: CI
+inputs:
+  - project
+runs:
+  steps:
+    - run: nx lint ${{ inputs.project }}
+    - run: nx build ${{ inputs.project }}

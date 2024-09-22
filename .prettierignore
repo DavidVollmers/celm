@@ -3,4 +3,5 @@ dist
 .prettierignore
 .eslintignore
 .gitkeep
+.nvmrc
 *.ico
