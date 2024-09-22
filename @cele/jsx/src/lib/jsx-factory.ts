@@ -19,8 +19,10 @@ export class JsxFactory {
     let element: Node;
     if (typeof jsxElement === 'string')
       element = document.createElement(jsxElement);
-    else if (isCElement(jsxElement)) element = use(jsxElement, this._options);
-    else throw new Error('Invalid element');
+    else if (isCElement(jsxElement)) {
+      use(jsxElement, this._options);
+      element = new jsxElement();
+    } else throw new Error('Invalid element');
 
     //TODO add props to element
 

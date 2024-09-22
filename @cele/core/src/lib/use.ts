@@ -4,8 +4,7 @@ import { CeleOptions, defaultCeleOptions } from './cele-options';
 export function use<T extends CElement>(
   element: CElementType<T>,
   options: CeleOptions = defaultCeleOptions,
-  ...args: any[]
-): T {
+) {
   if (!element.definition) throw new Error('Missing element definition');
   let name = element.definition.name;
   if (!name) {
@@ -19,7 +18,4 @@ export function use<T extends CElement>(
   else if (existingElement !== element) {
     throw new Error(`Element ${name} already defined`);
   }
-  const instance = new element(...args);
-  instance.initialize(element.definition);
-  return instance;
 }

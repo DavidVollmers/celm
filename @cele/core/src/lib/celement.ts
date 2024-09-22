@@ -1,18 +1,25 @@
 import { CElementDefinition } from './celement-definition';
 
-export type CElementType<T extends CElement> = (new (...args: any[]) => T) & {
+function getCElementDefinition<T extends CElement>(
+  type: CElementType<T>,
+): CElementDefinition<T> {
+  if (type.definition) return type.definition;
+  return getCElementDefinition(type.prototype);
+}
+
+export type CElementType<T extends CElement> = (new () => T) & {
   definition?: CElementDefinition<T>;
 };
 
 export abstract class CElement extends HTMLElement {
-  private _initialized = false;
+  private _isConnected = false;
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  protected initCallback(): void {}
-
-  public initialize(definition: CElementDefinition<this>): void {
-    if (this._initialized) throw new Error('Element already initialized');
-    this._initialized = true;
+  public connectedCallback(): void {
+    if (this._isConnected) throw new Error('Element already connected');
+    this._isConnected = true;
+    const definition = getCElementDefinition(
+      this.constructor as CElementType<this>,
+    );
     if (definition.shadow !== false)
       this.attachShadow({
         mode: 'open',
@@ -27,6 +34,5 @@ export abstract class CElement extends HTMLElement {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       else this.shadowRoot!.appendChild(node);
     }
-    this.initCallback();
   }
 }
