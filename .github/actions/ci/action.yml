@@ -5,7 +5,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: nx lint ${{ inputs.project }}
+    - run: npx nx lint ${{ inputs.project }}
       shell: bash
-    - run: nx build ${{ inputs.project }}
+    - run: npx nx build ${{ inputs.project }}
       shell: bash
