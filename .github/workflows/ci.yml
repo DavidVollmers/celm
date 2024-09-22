@@ -19,6 +19,6 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: npm i
-      - uses: ./.github/actions/ci.yml
+      - uses: ./.github/actions/ci
         with:
           project: '@cele/core'

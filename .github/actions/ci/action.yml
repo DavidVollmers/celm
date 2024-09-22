@@ -1,6 +1,7 @@
 name: CI
 inputs:
-  - project
+  project:
+    default: ''
 runs:
   steps:
     - run: nx lint ${{ inputs.project }}
