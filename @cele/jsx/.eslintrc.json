@@ -8,9 +8,7 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "rules": {
-        "@typescript-eslint/no-explicit-any": "off"
-      }
+      "rules": {}
     },
     {
       "files": ["*.js", "*.jsx"],
