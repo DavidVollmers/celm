@@ -15,5 +15,7 @@ export function use<T extends CElement>(
   }
   const existingElement = customElements.get(name);
   if (!existingElement) customElements.define(name, element);
-  return new element(...args);
+  const instance = new element(...args);
+  //TODO initialize instance
+  return instance;
 }

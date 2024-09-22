@@ -1,2 +1,1 @@
-import '@cele/jsx';
-import './app/app.element.tsx';
+import './app/app.element';
