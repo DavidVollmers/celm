@@ -19,6 +19,6 @@ export function use<T extends CElement>(
     throw new Error(`Element ${name} already defined`);
   }
   const instance = new element(...args);
-  //TODO initialize instance
+  instance.initialize();
   return instance;
 }

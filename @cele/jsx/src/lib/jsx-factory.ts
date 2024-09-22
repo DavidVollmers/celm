@@ -14,7 +14,7 @@ export class JsxFactory {
       readonly [key: string]: string | number;
     },
     ...children: (CElement | HTMLElement)[]
-  ): HTMLElement {
+  ): Node {
     console.log(jsxElement, props, children);
     let element: HTMLElement;
     if (typeof jsxElement === 'string')
