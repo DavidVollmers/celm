@@ -29,9 +29,6 @@ export default defineConfig({
     outDir: '../../dist/@cele/jsx',
     emptyOutDir: true,
     reportCompressedSize: true,
-    commonjsOptions: {
-      transformMixedEsModules: true,
-    },
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
@@ -43,7 +40,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: [],
+      external: ['@cele/core'],
     },
   },
 

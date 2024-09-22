@@ -29,8 +29,5 @@ export default defineConfig({
     outDir: '../../dist/examples/app',
     emptyOutDir: true,
     reportCompressedSize: true,
-    commonjsOptions: {
-      transformMixedEsModules: true,
-    },
   },
 });

@@ -1,4 +1,3 @@
-import './lib/intrinsic-elements';
 import { JsxFactory } from './lib/jsx-factory';
 import { defaultCeleOptions } from '@cele/core';
 
