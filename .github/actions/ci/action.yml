@@ -3,7 +3,7 @@ inputs:
   project:
     default: ''
 runs:
-  using: node20
+  using: composite
   steps:
     - run: nx lint ${{ inputs.project }}
       shell: bash
