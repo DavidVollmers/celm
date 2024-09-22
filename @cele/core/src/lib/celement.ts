@@ -18,6 +18,15 @@ export abstract class CElement extends HTMLElement {
         mode: 'open',
         ...definition.shadow,
       });
+    if (definition.template) {
+      const node =
+        typeof definition.template === 'function'
+          ? definition.template.call(this)
+          : definition.template;
+      if (definition.shadow === false) this.appendChild(node);
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      else this.shadowRoot!.appendChild(node);
+    }
     this.onInit();
   }
 }
