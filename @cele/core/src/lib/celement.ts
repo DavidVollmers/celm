@@ -8,7 +8,7 @@ export abstract class CElement extends HTMLElement {
   private _initialized = false;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  protected onInit(): void {}
+  protected initCallback(): void {}
 
   public initialize(definition: CElementDefinition<this>): void {
     if (this._initialized) throw new Error('Element already initialized');
@@ -27,6 +27,6 @@ export abstract class CElement extends HTMLElement {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       else this.shadowRoot!.appendChild(node);
     }
-    this.onInit();
+    this.initCallback();
   }
 }

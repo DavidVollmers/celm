@@ -1,2 +1,5 @@
 import '@cele/jsx';
-import './app/app.element';
+import { App } from './app/app';
+import { use } from '@cele/core';
+
+use(App);
