@@ -1,5 +1,3 @@
-import './lib/jsx';
-
 export { defaultCeleOptions } from './lib/cele-options';
 
 export type { CeleOptions } from './lib/cele-options';

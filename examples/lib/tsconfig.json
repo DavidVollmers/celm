@@ -2,7 +2,6 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "jsxFactory": "cele.jsx",
     "module": "commonjs",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
