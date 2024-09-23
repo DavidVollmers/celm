@@ -35,5 +35,15 @@ export abstract class CElement extends HTMLElement {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       else this.shadowRoot!.appendChild(node);
     }
+    if (definition.styles) {
+      if (definition.shadow === false)
+        throw new Error('Styles not supported on elements without shadow DOM');
+      const sheet =
+        typeof definition.styles === 'function'
+          ? definition.styles.call(this)
+          : definition.styles;
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      this.shadowRoot!.adoptedStyleSheets = [sheet];
+    }
   }
 }

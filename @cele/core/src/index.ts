@@ -12,6 +12,8 @@ export type { CElementDefinition } from './lib/celement-definition';
 
 export { cele } from './lib/decorators/cele';
 
+export { css } from './lib/css';
+
 export type { EventType } from './lib/event-type';
 
 export { use } from './lib/use';
