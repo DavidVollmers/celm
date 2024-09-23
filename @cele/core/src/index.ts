@@ -10,6 +10,8 @@ export type { CElementDefinition } from './lib/celement-definition';
 
 export { cele } from './lib/decorators/cele';
 
+export { DesignToken } from './lib/design-token';
+
 export { css } from './lib/css';
 
 export { use } from './lib/use';

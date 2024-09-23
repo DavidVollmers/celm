@@ -3,4 +3,10 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="../../../@cele/jsx/src/jsx-runtime.d.ts" />
 
+import { DesignToken } from '@cele/core';
+
 export { Button } from './lib/button/button';
+
+export const useLib = () => {
+  DesignToken.registerDeclaration(document.documentElement.style);
+};

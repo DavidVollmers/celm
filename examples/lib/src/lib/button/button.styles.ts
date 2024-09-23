@@ -1,4 +1,5 @@
 import { css } from '@cele/core';
+import { designTokens } from '../design-tokens';
 
 export const buttonStyles = css`
   :host {
@@ -7,7 +8,7 @@ export const buttonStyles = css`
 
   button {
     border: none;
-    background-color: blue;
+    background-color: ${designTokens.colors.primary['100']};
     margin: 0;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
