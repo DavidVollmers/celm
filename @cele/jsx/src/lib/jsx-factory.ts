@@ -20,7 +20,6 @@ export class JsxFactory {
     },
     ...children: (Node | string)[]
   ): Node {
-    console.log(jsxElement, props, children);
     let element: HTMLElement;
     if (typeof jsxElement === 'string')
       element = document.createElement(jsxElement);
