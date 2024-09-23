@@ -1,5 +1,4 @@
 import { CElementDefinition } from './celement-definition';
-import { EventType } from './event-type';
 
 function getCElementDefinition<T extends CElement>(
   type: CElementType<T>,
