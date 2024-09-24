@@ -1,6 +1,7 @@
 import { designTokenMap } from '@cele/core';
+import { Theme } from './theme';
 
-export const designTokens = {
+export const designTokens: Theme = {
   colors: {
     primary: designTokenMap({
       50: '#eff6ff',
