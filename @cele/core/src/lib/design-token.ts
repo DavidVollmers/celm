@@ -8,6 +8,10 @@ export class DesignToken {
 
   private _value?: string;
 
+  public get name(): string {
+    return this._name;
+  }
+
   public get varName(): string {
     return this._varName;
   }

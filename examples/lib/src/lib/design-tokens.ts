@@ -1,9 +1,9 @@
-import { DesignToken } from '@cele/core';
+import { designTokenMap } from '@cele/core';
 
 export const designTokens = {
   colors: {
-    primary: {
-      100: new DesignToken('colors.primary.100', '#0000ff'),
-    },
+    primary: designTokenMap({
+      100: '#0000ff',
+    }),
   },
 };
