@@ -14,6 +14,11 @@ export { DesignToken } from './lib/design-token';
 
 export { designTokenMap } from './lib/design-token-map';
 
+export type {
+  DesignTokenMap,
+  DesignTokenMapInit,
+} from './lib/design-token-map';
+
 export { css } from './lib/css';
 
 export { use } from './lib/use';
