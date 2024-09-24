@@ -1,9 +1,9 @@
 import { App } from './app';
-import { Button, designTokens } from 'examples-lib';
+import { Button, theme } from 'examples-lib';
 
 export const appTemplate = function (this: App) {
   function changeDesignToken() {
-    designTokens.colors.primary['100'].setValue('#00ff00');
+    theme.colors.primary['500'].setValue('#00ff00');
   }
 
   return (

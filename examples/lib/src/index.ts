@@ -7,7 +7,9 @@ import { DesignToken } from '@cele/core';
 
 export { Button } from './lib/button/button';
 
-export { designTokens } from './lib/design-tokens';
+export { theme } from './lib/theme';
+
+export type { Theme, ColorPalette } from './lib/theme';
 
 export const useLib = () => {
   DesignToken.registerDeclaration(document.documentElement.style);

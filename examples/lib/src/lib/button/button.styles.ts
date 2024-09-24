@@ -1,5 +1,5 @@
 import { css } from '@cele/core';
-import { designTokens } from '../design-tokens';
+import { theme } from '../theme';
 
 export const buttonStyles = css`
   :host {
@@ -8,7 +8,7 @@ export const buttonStyles = css`
 
   button {
     border: none;
-    background-color: ${designTokens.colors.primary['500']};
+    background-color: ${theme.colors.primary['500']};
     margin: 0;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
@@ -17,6 +17,6 @@ export const buttonStyles = css`
   }
 
   button:hover {
-    background-color: ${designTokens.colors.primary['700']};
+    background-color: ${theme.colors.primary['700']};
   }
 `;
