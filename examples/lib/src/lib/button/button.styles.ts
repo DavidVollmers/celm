@@ -8,7 +8,7 @@ export const buttonStyles = css`
 
   button {
     border: none;
-    background-color: ${designTokens.colors.primary['100']};
+    background-color: ${designTokens.colors.primary['500']};
     margin: 0;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
@@ -17,6 +17,6 @@ export const buttonStyles = css`
   }
 
   button:hover {
-    background-color: darkblue;
+    background-color: ${designTokens.colors.primary['700']};
   }
 `;
