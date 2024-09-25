@@ -5,3 +5,5 @@ dist
 .gitkeep
 .nvmrc
 *.ico
+*.svg
+*.astro
