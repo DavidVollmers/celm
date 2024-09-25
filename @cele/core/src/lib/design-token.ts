@@ -1,4 +1,4 @@
-import { PropertyTarget } from './property-target';
+import { PropertyTarget, StyleElementPropertyTarget } from './property-target';
 
 export class DesignToken {
   private static readonly _targets: PropertyTarget[] = [];
@@ -44,12 +44,16 @@ export class DesignToken {
     }
   }
 
-  //TODO allow registering via style element
   public static registerTarget(target: PropertyTarget): void {
     for (const token in DesignToken._tokens) {
       DesignToken.setToken(DesignToken._tokens[token], target);
     }
     DesignToken._targets.push(target);
+  }
+
+  public static registerAsStyleElement(element?: HTMLStyleElement): void {
+    const target = new StyleElementPropertyTarget(element);
+    DesignToken.registerTarget(target);
   }
 
   private static setToken(token: DesignToken, target: PropertyTarget): void {

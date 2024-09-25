@@ -21,8 +21,6 @@ export type {
   DesignTokenMapInit,
 } from './lib/design-token-map';
 
-export { StyleElementPropertyTarget } from './lib/property-target';
-
 export type { PropertyTarget } from './lib/property-target';
 
 export { use } from './lib/use';

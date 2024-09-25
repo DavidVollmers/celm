@@ -3,7 +3,7 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="../../../@cele/jsx/src/jsx-runtime.d.ts" />
 
-import { DesignToken, StyleElementPropertyTarget } from '@cele/core';
+import { DesignToken } from '@cele/core';
 
 export { Button } from './lib/button/button';
 
@@ -12,6 +12,5 @@ export { theme } from './lib/theme';
 export type { Theme, ColorPalette } from './lib/theme';
 
 export const useLib = () => {
-  const styles = new StyleElementPropertyTarget();
-  DesignToken.registerTarget(styles);
+  DesignToken.registerAsStyleElement();
 };
