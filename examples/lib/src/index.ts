@@ -12,5 +12,5 @@ export { theme } from './lib/theme';
 export type { Theme, ColorPalette } from './lib/theme';
 
 export const useLib = () => {
-  DesignToken.registerDeclaration(document.documentElement.style);
+  DesignToken.registerTarget(document.documentElement.style);
 };

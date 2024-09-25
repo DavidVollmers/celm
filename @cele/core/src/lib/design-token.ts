@@ -1,5 +1,7 @@
+import { PropertyTarget } from './property-target';
+
 export class DesignToken {
-  private static readonly _declarations: CSSStyleDeclaration[] = [];
+  private static readonly _targets: PropertyTarget[] = [];
   private static readonly _tokens: {
     [varName: string]: DesignToken;
   } = {};
@@ -37,25 +39,20 @@ export class DesignToken {
 
   public setValue(value: string): void {
     this._value = value;
-    for (const declaration of DesignToken._declarations) {
-      DesignToken.declareToken(this, declaration);
+    for (const target of DesignToken._targets) {
+      DesignToken.setToken(this, target);
     }
   }
 
-  public static registerDeclaration(declaration: CSSStyleDeclaration): void {
+  //TODO allow registering via style element
+  public static registerTarget(target: PropertyTarget): void {
     for (const token in DesignToken._tokens) {
-      DesignToken.declareToken(DesignToken._tokens[token], declaration);
+      DesignToken.setToken(DesignToken._tokens[token], target);
     }
-    this._declarations.push(declaration);
+    DesignToken._targets.push(target);
   }
 
-  private static declareToken(
-    token: DesignToken,
-    declaration: CSSStyleDeclaration,
-  ): void {
-    declaration.setProperty(
-      token._varName,
-      token._value ?? token._defaultValue,
-    );
+  private static setToken(token: DesignToken, target: PropertyTarget): void {
+    target.setProperty(token._varName, token._value ?? token._defaultValue);
   }
 }
