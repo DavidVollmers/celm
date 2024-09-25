@@ -8,15 +8,14 @@ export const buttonStyles = css`
 
   button {
     border: none;
-    background-color: ${theme.colors.primary['500']};
-    margin: 0;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    color: white;
-    transition: 0.1s linear background-color;
+    background-color: ${theme.colors.primary['600']};
+    margin: ${theme.spacing['0']};
+    padding: ${theme.spacing['2.5']} ${theme.spacing['3.5']};
+    border-radius: ${theme.borderRadius.md};
+    color: ${theme.colors.white};
   }
 
   button:hover {
-    background-color: ${theme.colors.primary['700']};
+    background-color: ${theme.colors.primary['500']};
   }
 `;
