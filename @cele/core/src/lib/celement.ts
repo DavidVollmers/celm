@@ -13,6 +13,13 @@ export type CElementType<T extends CElement> = (new () => T) & {
 
 export abstract class CElement extends HTMLElement {
   private _isConnected = false;
+  private _templateNode?: Node;
+
+  public get template(): Node {
+    if (!this._isConnected) throw new Error('Element not connected');
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    return this._templateNode!;
+  }
 
   public connectedCallback(): void {
     if (this._isConnected) throw new Error('Element already connected');
@@ -26,13 +33,13 @@ export abstract class CElement extends HTMLElement {
         ...definition.shadow,
       });
     if (definition.template) {
-      const node =
+      this._templateNode =
         typeof definition.template === 'function'
           ? definition.template.call(this)
           : definition.template;
-      if (definition.shadow === false) this.appendChild(node);
+      if (definition.shadow === false) this.appendChild(this._templateNode);
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      else this.shadowRoot!.appendChild(node);
+      else this.shadowRoot!.appendChild(this._templateNode);
     }
     if (definition.styles) {
       if (definition.shadow === false)
