@@ -4,6 +4,7 @@ import { theme } from '../theme';
 export const buttonStyles = css`
   :host {
     display: inline-flex;
+    ${theme.text.sm}
   }
 
   button {

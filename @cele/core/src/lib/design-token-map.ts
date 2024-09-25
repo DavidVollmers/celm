@@ -15,7 +15,7 @@ export const designTokenMap = <T extends DesignTokenMapInit>(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const map: any = {};
   for (const name in values) {
-    map[name] = new DesignToken(prefix + name, values[name]);
+    map[name] = new DesignToken(name, values[name], prefix);
   }
   return map;
 };

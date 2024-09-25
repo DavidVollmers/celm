@@ -7,6 +7,7 @@ export class DesignToken {
   } = {};
 
   private readonly _varName: string;
+  private readonly _propertyName: string;
 
   private _value?: string;
 
@@ -18,17 +19,21 @@ export class DesignToken {
     return this._varName;
   }
 
+  public get propertyName(): string {
+    return this._propertyName;
+  }
+
   public constructor(
     private readonly _name: string,
     private readonly _defaultValue: string,
+    mapPrefix?: string,
   ) {
-    const varName = _name
-      .replace(/\s/g, '')
-      .replace(/[^a-z0-9]/gi, '-')
-      .replace(/-{2,}/g, '-')
-      .toLowerCase();
-    if (varName.startsWith('-')) this._varName = '-' + varName;
-    else this._varName = '--' + varName;
+    this._propertyName = DesignToken.sanitizeName(_name);
+    this._varName =
+      '--' +
+      (mapPrefix
+        ? DesignToken.sanitizeName(mapPrefix + '-' + _name)
+        : this._propertyName);
     const existing = DesignToken._tokens[this._varName];
     if (existing)
       throw new Error(
@@ -58,5 +63,15 @@ export class DesignToken {
 
   private static setToken(token: DesignToken, target: PropertyTarget): void {
     target.setProperty(token._varName, token._value ?? token._defaultValue);
+  }
+
+  private static sanitizeName(name: string): string {
+    const sanitized = name
+      .replace(/\s/g, '')
+      .replace(/[^a-z0-9]/gi, '-')
+      .replace(/[A-Z]/g, (l) => `-${l.toLowerCase()}`)
+      .replace(/-{2,}/g, '-')
+      .toLowerCase();
+    return sanitized.startsWith('-') ? sanitized.substring(1) : sanitized;
   }
 }

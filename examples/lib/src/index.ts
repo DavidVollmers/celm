@@ -9,7 +9,7 @@ export { Button } from './lib/button/button';
 
 export { theme } from './lib/theme';
 
-export type { Theme, ColorPalette } from './lib/theme';
+export type { Theme, ColorPalette, Text } from './lib/theme';
 
 export const useLib = () => {
   DesignToken.registerAsStyleElement();
