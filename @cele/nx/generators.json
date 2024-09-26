@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "celement": {
+      "factory": "./src/generators/celement/generator",
+      "schema": "./src/generators/celement/schema.json",
+      "description": "celement generator"
+    }
+  }
+}
