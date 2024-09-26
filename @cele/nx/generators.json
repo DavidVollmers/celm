@@ -1,9 +1,9 @@
 {
   "generators": {
-    "celement": {
-      "factory": "./src/generators/celement/generator",
-      "schema": "./src/generators/celement/schema.json",
-      "description": "celement generator"
+    "element": {
+      "factory": "./src/generators/element/generator",
+      "schema": "./src/generators/element/schema.json",
+      "description": "element generator"
     }
   }
 }

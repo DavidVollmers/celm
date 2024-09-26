@@ -5,10 +5,10 @@ import {
   Tree,
 } from '@nx/devkit';
 import * as path from 'path';
-import { CelementGeneratorSchema } from './schema';
+import { ElementGeneratorSchema } from './schema';
 
 function getName(
-  options: CelementGeneratorSchema,
+  options: ElementGeneratorSchema,
   startWithLowerCase: boolean,
   join = '',
 ): string {
@@ -20,10 +20,11 @@ function getName(
   return name.charAt(0).toLowerCase() + name.slice(1);
 }
 
-export async function celementGenerator(
+export async function elementGenerator(
   tree: Tree,
-  options: CelementGeneratorSchema,
+  options: ElementGeneratorSchema,
 ) {
+  console.log(options.name, options.project);
   const substitutions = {
     ...options,
     className: getName(options, false),
@@ -34,4 +35,4 @@ export async function celementGenerator(
   await formatFiles(tree);
 }
 
-export default celementGenerator;
+export default elementGenerator;

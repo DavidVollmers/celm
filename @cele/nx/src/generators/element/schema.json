@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Element",
+  "title": "Generates a new CElement in your project",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Element name (kebab-case)",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What is the name of the element? (kebab-case)",
+      "pattern": "[a-z0-9]+(?:-[a-z0-9]+)*"
+    },
+    "project": {
+      "type": "string",
+      "description": "The project where the element will be located.",
+      "x-prompt": "Which project will this element be located in?",
+      "x-dropdown": "projects"
+    }
+  },
+  "required": ["name", "project"]
+}
