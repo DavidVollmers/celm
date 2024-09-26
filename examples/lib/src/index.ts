@@ -5,6 +5,8 @@
 
 export { Button } from './lib/button/button';
 
+export { Input } from './lib/input/input';
+
 export { Lib } from './lib/lib';
 
 export { theme } from './lib/theme';

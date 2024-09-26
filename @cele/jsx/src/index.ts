@@ -3,6 +3,8 @@ import { defaultCeleOptions } from '@cele/core';
 
 export { JsxFactory };
 
+export { useRef, CElementReference } from './lib/use-ref';
+
 declare global {
   interface Window {
     cele: {
