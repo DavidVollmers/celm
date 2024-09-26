@@ -5,3 +5,4 @@ dist
 .gitkeep
 .nvmrc
 *.ico
+*.template
