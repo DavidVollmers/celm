@@ -1,10 +1,10 @@
 import {
-  addProjectConfiguration,
   formatFiles,
   generateFiles,
+  joinPathFragments,
+  readProjectConfiguration,
   Tree,
 } from '@nx/devkit';
-import * as path from 'path';
 import { ElementGeneratorSchema } from './schema';
 
 function getName(
@@ -14,7 +14,7 @@ function getName(
 ): string {
   const name = options.name
     .split('-')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(join);
   if (!startWithLowerCase) return name;
   return name.charAt(0).toLowerCase() + name.slice(1);
@@ -32,6 +32,13 @@ export async function elementGenerator(
     displayName: getName(options, false, ' '),
     elementName: options.name,
   };
+  const projectRoot = readProjectConfiguration(tree, options.project).root;
+  generateFiles(
+    tree,
+    joinPathFragments(__dirname, './files'),
+    joinPathFragments(projectRoot, options.path),
+    substitutions,
+  );
   await formatFiles(tree);
 }
 
