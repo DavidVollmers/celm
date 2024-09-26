@@ -23,7 +23,7 @@
     "path": {
       "type": "string",
       "description": "The path inside the project where the element will be located.",
-      "default": "./elements"
+      "default": "./src/lib"
     }
   },
   "required": ["name", "project"]

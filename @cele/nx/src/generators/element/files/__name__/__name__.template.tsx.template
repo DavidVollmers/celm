@@ -1,5 +1,5 @@
 export const <%= constPrefix %>Template = (
-  <div>
+  <>
     Hello <%= className %>!
-  </div>
+  </>
 );
