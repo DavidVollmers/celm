@@ -1,5 +1,12 @@
-import { CElement, CElementType, CeleOptions, use } from '@cele/core';
+import {
+  CElement,
+  CElementType,
+  CeleOptions,
+  disconnectElementEvent,
+  use,
+} from '@cele/core';
 import { JSX_FRAGMENT } from './symbols';
+import { CElementReference, Reference } from './use-ref';
 
 function isCElement<T extends CElement>(type: CElementType<T>): boolean {
   return type.prototype instanceof CElement || isCElement(type.prototype);
@@ -13,6 +20,8 @@ export class JsxFactory {
     props: {
       readonly [key: string]:
         | EventListenerOrEventListenerObject
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        | CElementReference<any>
         | string
         | number
         | boolean
@@ -36,6 +45,17 @@ export class JsxFactory {
     for (const key in props) {
       const value = props[key];
       if (value == null) continue;
+
+      if (key === 'ref') {
+        if (!(value instanceof Reference))
+          throw new Error('Unsupported reference type: ' + typeof value);
+        element.addEventListener(disconnectElementEvent, () => {
+          value.setElement(null);
+        });
+        value.setElement(element);
+        continue;
+      }
+
       if (
         typeof value === 'string' ||
         typeof value === 'number' ||

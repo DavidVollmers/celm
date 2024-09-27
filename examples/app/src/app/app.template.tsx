@@ -6,9 +6,7 @@ export const appTemplate = function (this: App) {
   const input = useRef<Input<string>>();
   return (
     <>
-      <Input T={String} ref={input}>
-        Your name
-      </Input>
+      <Input ref={input}>Your name</Input>
       <Button onClick={() => alert(`Hello ${input.el.value}!`)}>
         Hello <b>World</b>!
       </Button>

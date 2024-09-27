@@ -1,4 +1,5 @@
 import { CElementDefinition } from './celement-definition';
+import { disconnectElementEvent } from './symbols';
 
 function getCElementDefinition<T extends CElement>(
   type: CElementType<T>,
@@ -53,5 +54,9 @@ export abstract class CElement extends HTMLElement {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       this.shadowRoot!.adoptedStyleSheets = [sheet];
     }
+  }
+
+  public disconnectedCallback(): void {
+    this.dispatchEvent(new CustomEvent(disconnectElementEvent));
   }
 }

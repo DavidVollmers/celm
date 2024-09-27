@@ -23,4 +23,6 @@ export type {
 
 export type { PropertyTarget } from './lib/property-target';
 
+export { disconnectElementEvent } from './lib/symbols';
+
 export { use } from './lib/use';
