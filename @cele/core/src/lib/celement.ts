@@ -1,5 +1,5 @@
 import { CElementDefinition } from './celement-definition';
-import { disconnectElementEvent } from './symbols';
+import { disconnectElementEvent, elementPropertyChangedEvent } from './symbols';
 
 function getCElementDefinition<T extends CElement>(
   type: CElementType<T>,
@@ -22,7 +22,7 @@ export abstract class CElement extends HTMLElement {
     return this._templateNodes!;
   }
 
-  public connectedCallback(): void {
+  protected connectedCallback(): void {
     if (this._isConnected) throw new Error('Element already connected');
     this._isConnected = true;
     const definition = getCElementDefinition(
@@ -54,9 +54,68 @@ export abstract class CElement extends HTMLElement {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       this.shadowRoot!.adoptedStyleSheets = [sheet];
     }
+    if (definition.attributes) {
+      for (const attribute of definition.attributes) {
+        this.observeProperty(attribute);
+      }
+    }
   }
 
-  public disconnectedCallback(): void {
-    this.dispatchEvent(new CustomEvent(disconnectElementEvent));
+  protected disconnectedCallback(): void {
+    this.emit(disconnectElementEvent);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  protected updatedCallback(): void {}
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  protected emit(event: string, detail?: any): void {
+    this.dispatchEvent(
+      new CustomEvent(event, {
+        detail,
+        cancelable: false,
+      }),
+    );
+  }
+
+  private observeProperty(property: string): void {
+    const descriptor = Object.getOwnPropertyDescriptor(this, property);
+    let currentValue = descriptor?.get ? descriptor.get() : descriptor?.value;
+    Object.defineProperty(this, property, {
+      get() {
+        return currentValue;
+      },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      set(value: any) {
+        if (currentValue === value) return;
+        const oldValue = currentValue;
+        currentValue = value;
+        this.emit(elementPropertyChangedEvent, {
+          property,
+          oldValue,
+          newValue: value,
+        });
+        this.update();
+      },
+    });
+  }
+
+  private update(): void {
+    const definition = getCElementDefinition(
+      this.constructor as CElementType<this>,
+    );
+    if (typeof definition.template === 'function') {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      for (const oldNode of this._templateNodes!) {
+        this.removeChild(oldNode);
+      }
+      this._templateNodes = definition.template.call(this);
+    }
+    if (typeof definition.styles === 'function') {
+      const sheet = definition.styles.call(this);
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      this.shadowRoot!.adoptedStyleSheets = [sheet];
+    }
+    this.updatedCallback();
   }
 }
