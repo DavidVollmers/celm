@@ -8,6 +8,8 @@ export type { CElementType } from './lib/celement';
 
 export type { CElementDefinition } from './lib/celement-definition';
 
+export { attr } from './lib/decorators/attr';
+
 export { cele } from './lib/decorators/cele';
 
 export { css } from './lib/css';

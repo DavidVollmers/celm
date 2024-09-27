@@ -3,13 +3,13 @@ import { disconnectElementEvent } from './symbols';
 
 function getCElementDefinition<T extends CElement>(
   type: CElementType<T>,
-): CElementDefinition<T> {
+): Partial<CElementDefinition<T>> {
   if (type.definition) return type.definition;
   return getCElementDefinition(type.prototype);
 }
 
 export type CElementType<T extends CElement> = (new () => T) & {
-  definition?: CElementDefinition<T>;
+  definition?: Partial<CElementDefinition<T>>;
 };
 
 export abstract class CElement extends HTMLElement {

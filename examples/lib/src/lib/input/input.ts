@@ -1,4 +1,4 @@
-import { cele, CElement } from '@cele/core';
+import { attr, cele, CElement } from '@cele/core';
 import { inputStyles as styles } from './input.styles';
 import { inputTemplate as template } from './input.template';
 
@@ -8,7 +8,9 @@ import { inputTemplate as template } from './input.template';
   styles,
 })
 export class Input<T> extends CElement {
+  @attr()
   public type: 'text' | 'password' = 'text';
 
+  @attr()
   public value: T | null = null;
 }
