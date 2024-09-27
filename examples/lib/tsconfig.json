@@ -3,6 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxFactory": "cele.jsx",
+    "jsxFragmentFactory": "cele.JsxFragment",
     "module": "commonjs",
     "forceConsistentCasingInFileNames": true,
     "strict": true,

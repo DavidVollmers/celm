@@ -8,11 +8,11 @@ export type CElementStyles<T extends CElement> =
   | CElementStylesFunction<T>
   | CSSStyleSheet;
 
-export type CElementTemplateFunction<T extends CElement> = (this: T) => Node;
+export type CElementTemplateFunction<T extends CElement> = (this: T) => Node[];
 
 export type CElementTemplate<T extends CElement> =
   | CElementTemplateFunction<T>
-  | Node;
+  | Node[];
 
 export interface CElementDefinition<T extends CElement> {
   readonly name: string;

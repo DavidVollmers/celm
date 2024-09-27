@@ -3,7 +3,7 @@ import { inputStyles as styles } from './input.styles';
 import { inputTemplate as template } from './input.template';
 
 @cele({
-  name: 'input',
+  name: '-input',
   template,
   styles,
 })
