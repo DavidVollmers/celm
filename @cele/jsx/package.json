@@ -1,8 +1,8 @@
 {
   "name": "@cele/jsx",
-  "version": "0.0.1",
+  "version": "0.1.0-preview",
   "dependencies": {
-    "@cele/core": "0.0.1"
+    "@cele/core": "0.1.0-preview"
   },
   "type": "module",
   "main": "./index.js",

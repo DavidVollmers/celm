@@ -61,7 +61,7 @@
       "conventionalCommits": true
     },
     "git": {
-      "commitMessage": "chore: release ${version}"
+      "commitMessage": "chore: release v{version}"
     }
   }
 }
