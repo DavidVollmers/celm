@@ -8,6 +8,8 @@ export type { CElementType } from './lib/celement';
 
 export type { CElementDefinition } from './lib/celement-definition';
 
+export { attr } from './lib/decorators/attr';
+
 export { cele } from './lib/decorators/cele';
 
 export { css } from './lib/css';
@@ -22,5 +24,7 @@ export type {
 } from './lib/design-token-map';
 
 export type { PropertyTarget } from './lib/property-target';
+
+export { disconnectElementEvent } from './lib/symbols';
 
 export { use } from './lib/use';
