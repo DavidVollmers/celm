@@ -1,7 +1,9 @@
 {
   "name": "@cele/jsx",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "@cele/core": "0.0.1"
+  },
   "type": "module",
   "main": "./index.js",
   "typings": "./index.d.ts",
