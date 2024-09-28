@@ -54,5 +54,14 @@
       "unitTestRunner": "jest",
       "e2eTestRunner": "none"
     }
+  },
+  "release": {
+    "projects": ["@cele/core", "@cele/jsx", "@cele/nx"],
+    "version": {
+      "conventionalCommits": true
+    },
+    "git": {
+      "commitMessage": "chore: release ${version}"
+    }
   }
 }
