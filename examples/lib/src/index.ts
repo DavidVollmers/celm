@@ -5,7 +5,9 @@
 
 export { Button } from './lib/button/button';
 
-export { Input } from './lib/input/input';
+export { Input, stringInputConverter } from './lib/input/input';
+
+export type { InputConverter } from './lib/input/input';
 
 export { Lib } from './lib/lib';
 

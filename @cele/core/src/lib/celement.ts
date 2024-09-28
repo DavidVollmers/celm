@@ -107,9 +107,16 @@ export abstract class CElement extends HTMLElement {
     if (typeof definition.template === 'function') {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       for (const oldNode of this._templateNodes!) {
-        this.removeChild(oldNode);
+        if (definition.shadow === false) this.removeChild(oldNode);
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        else this.shadowRoot!.removeChild(oldNode);
       }
       this._templateNodes = definition.template.call(this);
+      for (const node of this._templateNodes) {
+        if (definition.shadow === false) this.appendChild(node);
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        else this.shadowRoot!.appendChild(node);
+      }
     }
     if (typeof definition.styles === 'function') {
       const sheet = definition.styles.call(this);

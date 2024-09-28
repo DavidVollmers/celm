@@ -9,7 +9,12 @@ export const inputTemplate = function (this: Input<any>) {
       <label for={id}>
         <slot></slot>
       </label>
-      <input type={this.type} value={stringValue} id={id} />
+      <input
+        id={id}
+        type={this.type}
+        value={stringValue}
+        onchange={this.onInput.bind(this)}
+      />
     </>
   );
 };
