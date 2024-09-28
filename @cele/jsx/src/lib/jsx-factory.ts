@@ -1,6 +1,5 @@
 import {
   CElement,
-  CElementDefinition,
   CElementType,
   CeleOptions,
   disconnectElementEvent,
@@ -16,7 +15,6 @@ function isCElement<T extends CElement>(type: CElementType<T>): boolean {
 export class JsxFactory {
   public constructor(private readonly _options: CeleOptions) {}
 
-  //TODO return this => Node[] callback to bind functions
   public jsx<T extends CElement>(
     jsxElement: CElementType<T> | string | symbol,
     props: {
