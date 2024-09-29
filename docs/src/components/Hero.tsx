@@ -1,3 +1,5 @@
+import '../styles/prism.css';
+
 import { Fragment } from 'react';
 import clsx from 'clsx';
 import { Highlight } from 'prism-react-renderer';
@@ -59,9 +61,11 @@ export function Hero() {
               <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
                 Custom elements done right.
               </p>
-              {/*<p className="mt-3 text-2xl tracking-tight text-slate-400">*/}
-              {/*  Subtext*/}
-              {/*</p>*/}
+              <p className="mt-3 text-2xl tracking-tight text-slate-400">
+                Build powerful web applications, scalable design systems, and
+                reusable components with custom elements and modern web
+                technologies.
+              </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
                 {/*<Button href="/">Get started</Button>*/}
                 {/*<Button href="/" variant="secondary">*/}
