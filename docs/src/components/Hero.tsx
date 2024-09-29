@@ -8,18 +8,28 @@ import { Highlight } from 'prism-react-renderer';
 const blurCyanImage = 'assets/images/blur-cyan.png';
 const blurIndigoImage = 'assets/images/blur-indigo.png';
 
-const codeLanguage = 'javascript';
-const code = `export default {
-  strategy: 'predictive',
-  engine: {
-    cpus: 12,
-    backups: ['./storage/cache.wtf'],
+const codeLanguage = 'tsx';
+const code = `import { CElement, attr, celm, css } from '@celm/core';
+
+@celm({
+  name: 'my-element',
+  template: function (this: MyElement) {
+    return <h1>Hello, {this.name}!</h1>;
   },
+  style: css\`
+    h1 {
+      color: blue;
+    }
+  \`,
+})
+class MyElement extends CElement {
+  @attr()
+  public name = 'World';
 }`;
 
 const tabs = [
-  { name: 'cache-advance.config.js', isActive: true },
-  { name: 'package.json', isActive: false },
+  { name: 'my-element.tsx', isActive: true },
+  { name: 'app.tsx', isActive: false },
 ];
 
 function TrafficLightsIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
