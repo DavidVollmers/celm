@@ -12,7 +12,7 @@
         "outputPath": "dist/@celm/core",
         "main": "@celm/core/src/index.ts",
         "tsConfig": "@celm/core/tsconfig.lib.json",
-        "assets": ["@celm/core/*.md"]
+        "assets": ["@celm/core/*.md", "@celm/core/*.txt"]
       }
     }
   }
