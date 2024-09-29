@@ -1,7 +1,0 @@
-import { css } from '@cele/core';
-
-export const <%= constPrefix %>Styles = css`
-  :host {
-    display: flex;
-  }
-`;

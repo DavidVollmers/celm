@@ -1,7 +1,7 @@
-import { cele, CElement } from '@cele/core';
+import { celm, CElement } from '@celm/core';
 import { appTemplate as template } from './app.template';
 
-@cele({
+@celm({
   name: 'example-app',
   template,
 })

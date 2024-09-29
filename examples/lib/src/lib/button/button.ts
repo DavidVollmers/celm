@@ -1,8 +1,8 @@
-import { cele, CElement } from '@cele/core';
+import { celm, CElement } from '@celm/core';
 import { buttonTemplate as template } from './button.template';
 import { buttonStyles as styles } from './button.styles';
 
-@cele({
+@celm({
   name: '-button',
   template,
   styles,

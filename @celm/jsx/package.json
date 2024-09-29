@@ -1,0 +1,13 @@
+{
+  "name": "@celm/jsx",
+  "version": "0.1.0-preview",
+  "dependencies": {
+    "@celm/core": "0.1.0-preview"
+  },
+  "type": "module",
+  "main": "./index.js",
+  "typings": "./index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  }
+}

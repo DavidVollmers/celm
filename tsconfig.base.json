@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cele/core": ["@cele/core/src/index.ts"],
-      "@cele/jsx": ["@cele/jsx/src/index.ts"],
-      "@cele/nx": ["@cele/nx/src/index.ts"],
+      "@celm/core": ["@celm/core/src/index.ts"],
+      "@celm/jsx": ["@celm/jsx/src/index.ts"],
+      "@celm/nx": ["@celm/nx/src/index.ts"],
       "examples-lib": ["examples/lib/src/index.ts"]
     }
   },

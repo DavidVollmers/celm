@@ -1,4 +1,4 @@
-import { attr, cele, CElement } from '@cele/core';
+import { attr, celm, CElement } from '@celm/core';
 import { inputStyles as styles } from './input.styles';
 import { inputTemplate as template } from './input.template';
 
@@ -7,7 +7,7 @@ export type InputConverter<T> = (value: string) => T;
 export const stringInputConverter: InputConverter<string> = (value: string) =>
   value;
 
-@cele({
+@celm({
   name: '-input',
   template,
   styles,

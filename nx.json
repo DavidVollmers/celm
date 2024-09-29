@@ -54,5 +54,14 @@
       "unitTestRunner": "jest",
       "e2eTestRunner": "none"
     }
+  },
+  "release": {
+    "projects": ["@celm/core", "@celm/jsx", "@celm/nx"],
+    "version": {
+      "conventionalCommits": true
+    },
+    "git": {
+      "commitMessage": "chore: release v{version}"
+    }
   }
 }

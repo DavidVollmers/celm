@@ -1,6 +1,6 @@
-import '@cele/jsx';
+import '@celm/jsx';
 import { App } from './app/app';
-import { use } from '@cele/core';
+import { use } from '@celm/core';
 import { Lib } from 'examples-lib';
 
 use(Lib);
