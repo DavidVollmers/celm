@@ -23,7 +23,7 @@ Coming soon...
 
 ### Packages
 
-- [@celm/core](./@celm/core) - The core package for Celm that provides the base functionality for creating custom
+- [@celm/core](./@celm/core/README.md) - The core package for Celm that provides the base functionality for creating custom
   elements.
-- [@celm/jsx](./@celm/jsx) - A JSX pragma for creating custom elements.
-- [@celm/nx](./@celm/nx) - A plugin for Nx that provides generators for custom elements.
+- [@celm/jsx](./@celm/jsx/README.md) - A JSX pragma for creating custom elements.
+- [@celm/nx](./@celm/nx/README.md) - A plugin for Nx that provides generators for custom elements.
