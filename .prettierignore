@@ -6,3 +6,4 @@ dist
 .nvmrc
 *.ico
 *.template
+*.txt
