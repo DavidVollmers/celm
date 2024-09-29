@@ -22,8 +22,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: 'var(--font-inter)',
-        display: ['var(--font-lexend)', { fontFeatureSettings: '"ss01"' }],
+        sans: 'Inter',
+        display: ['Lexend', { fontFeatureSettings: '"ss01"' }],
       },
       maxWidth: {
         '8xl': '88rem',
