@@ -20,6 +20,12 @@ To use the JSX factory, you need to configure it in your `tsconfig.json` file:
 }
 ```
 
+Also make sure to import the JSX factory in the entry file of your project:
+
+```ts
+import '@celm/jsx';
+```
+
 ### Example
 
 ```tsx
