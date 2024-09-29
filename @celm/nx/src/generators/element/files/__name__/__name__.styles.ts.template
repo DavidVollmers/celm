@@ -1,6 +1,6 @@
 import { css } from '@celm/core';
 
-export const inputStyles = css`
+export const <%= constPrefix %>Styles = css`
   :host {
     display: flex;
   }

@@ -19,11 +19,11 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: npm i
-      - name: '@cele/core'
+      - name: '@celm/core'
         uses: ./.github/actions/ci
         with:
-          project: '@cele/core'
-      - name: '@cele/jsx'
+          project: '@celm/core'
+      - name: '@celm/jsx'
         uses: ./.github/actions/ci
         with:
-          project: '@cele/jsx'
+          project: '@celm/jsx'

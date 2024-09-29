@@ -2,8 +2,8 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "jsxFactory": "cele.jsx",
-    "jsxFragmentFactory": "cele.JsxFragment",
+    "jsxFactory": "celm.jsx",
+    "jsxFragmentFactory": "celm.JsxFragment",
     "module": "commonjs",
     "forceConsistentCasingInFileNames": true,
     "strict": true,

@@ -1,0 +1,10 @@
+import { celm, CElement } from '@celm/core';
+import { <%= constPrefix %>Styles as styles } from './<%= name %>.styles';
+import { <%= constPrefix %>Template as template } from './<%= name %>.template';
+
+@celm({
+  name: '<%= name %>',
+  template,
+  styles,
+})
+export class <%= className %> extends CElement {}

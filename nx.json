@@ -56,7 +56,7 @@
     }
   },
   "release": {
-    "projects": ["@cele/core", "@cele/jsx", "@cele/nx"],
+    "projects": ["@celm/core", "@celm/jsx", "@celm/nx"],
     "version": {
       "conventionalCommits": true
     },

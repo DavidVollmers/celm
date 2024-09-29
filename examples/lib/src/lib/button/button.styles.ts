@@ -1,4 +1,4 @@
-import { css } from '@cele/core';
+import { css } from '@celm/core';
 import { theme } from '../theme';
 
 export const buttonStyles = css`

@@ -7,7 +7,7 @@ import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/examples/lib',
+  cacheDir: '../../node_modules/.vite/@celm/core',
 
   plugins: [
     nxViteTsPaths(),
@@ -26,13 +26,13 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: '../../dist/examples/lib',
+    outDir: '../../dist/@celm/core',
     emptyOutDir: true,
     reportCompressedSize: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'examples-lib',
+      name: '@celm/core',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
@@ -40,7 +40,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['@celm/core', '@celm/jsx'],
+      external: [],
       output: {
         preserveModules: true,
         entryFileNames: '[name].js',
@@ -56,7 +56,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/examples/lib',
+      reportsDirectory: '../../coverage/@celm/core',
       provider: 'v8',
     },
   },

@@ -3,8 +3,8 @@
   "files": [],
   "compilerOptions": {
     "jsx": "preserve",
-    "jsxFactory": "cele.jsx",
-    "jsxFragmentFactory": "cele.JsxFragment",
+    "jsxFactory": "celm.jsx",
+    "jsxFragmentFactory": "celm.JsxFragment",
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",

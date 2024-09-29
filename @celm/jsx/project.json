@@ -1,0 +1,19 @@
+{
+  "name": "@celm/jsx",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "@celm/jsx/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/@celm/jsx",
+        "main": "@celm/jsx/src/index.ts",
+        "tsConfig": "@celm/jsx/tsconfig.lib.json",
+        "assets": ["@celm/jsx/*.md"]
+      }
+    }
+  }
+}

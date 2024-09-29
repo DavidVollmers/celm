@@ -1,6 +1,6 @@
-import { cele, CElement, DesignToken } from '@cele/core';
+import { celm, CElement, DesignToken } from '@celm/core';
 
-@cele({
+@celm({
   name: 'example-lib',
   shadow: false,
   template: [document.createElement('style')],

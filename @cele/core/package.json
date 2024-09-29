@@ -1,8 +1,0 @@
-{
-  "name": "@cele/core",
-  "version": "0.1.0-preview",
-  "dependencies": {},
-  "type": "module",
-  "main": "./index.js",
-  "typings": "./index.d.ts"
-}
