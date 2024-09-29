@@ -13,7 +13,7 @@ At the core is the `CElement` base class for creating custom elements which reac
 attributes. It is meant to be used in conjunction with the `@celm` and `@attr` decorators, to define the name, style,
 DOM and attributes of the custom element.
 
-You can also use the [@celm/jsx](../jsx) package on top to use JSX to build your custom element's DOM.
+You can also use the [@celm/jsx](../jsx/README.md) package on top to use JSX to build your custom element's DOM.
 
 ### Example
 
