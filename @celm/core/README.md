@@ -22,7 +22,11 @@ import { CElement, attr, celm, css } from '@celm/core';
 
 @celm({
   name: 'my-element',
-  template: [document.createElement('h1')],
+  template: function (this: MyElement) {
+    const h1 = document.createElement('h1');
+    h1.textContent = `Hello, ${this.name}!`;
+    return [h1];
+  },
   style: css`
     h1 {
       color: blue;
@@ -32,11 +36,6 @@ import { CElement, attr, celm, css } from '@celm/core';
 class MyElement extends CElement {
   @attr()
   public name = 'World';
-
-  protected override connectedCallback() {
-    super.connectedCallback();
-    this.template[0].textContent = `Hello, ${this.name}!`;
-  }
 }
 ```
 

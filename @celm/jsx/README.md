@@ -1,11 +1,43 @@
-# jsx
+## @celm/jsx
 
-This library was generated with [Nx](https://nx.dev).
+This package provides the JSX factory to be used with the [@celm/core](../core/README.md) package.
 
-## Building
+### Documentation
 
-Run `nx build jsx` to build the library.
+Coming soon...
 
-## Running unit tests
+### Overview
 
-Run `nx test jsx` to execute the unit tests via [Vitest](https://vitest.dev/).
+To use the JSX factory, you need to configure it in your `tsconfig.json` file:
+
+```json
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxFactory": "celm.jsx",
+    "jsxFragmentFactory": "celm.JsxFragment"
+  }
+}
+```
+
+### Example
+
+```tsx
+import { CElement, attr, celm, css } from '@celm/core';
+
+@celm({
+  name: 'my-element',
+  template: function (this: MyElement) {
+    return <h1>Hello, {this.name}!</h1>;
+  },
+  style: css`
+    h1 {
+      color: blue;
+    }
+  `,
+})
+class MyElement extends CElement {
+  @attr()
+  public name = 'World';
+}
+```
