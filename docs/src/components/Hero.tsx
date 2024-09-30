@@ -7,8 +7,8 @@ import { Highlight } from 'prism-react-renderer';
 import { Button } from './Button';
 import { HeroBackground } from './HeroBackground';
 
-const blurCyanImage = 'assets/images/blur-cyan.png';
-const blurpurpleImage = 'assets/images/blur-purple.png';
+const blurFuchsiaImage = 'assets/images/blur-fuchsia.png';
+const blurPurpleImage = 'assets/images/blur-purple.png';
 
 const codeLanguage = 'tsx';
 const code = `import { CElement, attr, celm, css } from '@celm/core';
@@ -52,7 +52,7 @@ export function Hero() {
           <div className="relative z-10 md:text-center lg:text-left">
             <img
               className="absolute bottom-full right-full -mb-56 -mr-72 opacity-50"
-              src={blurCyanImage}
+              src={blurFuchsiaImage}
               alt=""
               width={530}
               height={530}
@@ -84,14 +84,14 @@ export function Hero() {
             <div className="relative">
               <img
                 className="absolute -right-64 -top-64"
-                src={blurCyanImage}
+                src={blurFuchsiaImage}
                 alt=""
                 width={530}
                 height={530}
               />
               <img
                 className="absolute -bottom-40 -right-44"
-                src={blurpurpleImage}
+                src={blurPurpleImage}
                 alt=""
                 width={567}
                 height={567}
