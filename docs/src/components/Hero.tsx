@@ -1,14 +1,14 @@
-import '../styles/prism.css';
+import '../styles/Laserwave.css';
 
 import { Fragment } from 'react';
 import clsx from 'clsx';
 import { Highlight } from 'prism-react-renderer';
 
-// import { Button } from '@/components/Button';
-// import { HeroBackground } from '@/components/HeroBackground';
+import { Button } from './Button';
+import { HeroBackground } from './HeroBackground';
 
 const blurCyanImage = 'assets/images/blur-cyan.png';
-const blurIndigoImage = 'assets/images/blur-indigo.png';
+const blurpurpleImage = 'assets/images/blur-purple.png';
 
 const codeLanguage = 'tsx';
 const code = `import { CElement, attr, celm, css } from '@celm/core';
@@ -58,7 +58,7 @@ export function Hero() {
               height={530}
             />
             <div className="relative">
-              <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
+              <p className="inline bg-gradient-to-r from-purple-200 via-fuchsia-400 to-purple-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
                 Custom elements done right.
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">
@@ -67,16 +67,19 @@ export function Hero() {
                 technologies.
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                {/*<Button href="/">Get started</Button>*/}
-                {/*<Button href="/" variant="secondary">*/}
-                {/*  View on GitHub*/}
-                {/*</Button>*/}
+                <Button href="/">Get started</Button>
+                <Button
+                  href="https://github.com/DavidVollmers/celm"
+                  variant="secondary"
+                >
+                  View on GitHub
+                </Button>
               </div>
             </div>
           </div>
           <div className="relative lg:static xl:pl-10">
             <div className="absolute inset-x-[-50vw] -bottom-48 -top-32 [mask-image:linear-gradient(transparent,white,white)] lg:-bottom-32 lg:-top-32 lg:left-[calc(50%+14rem)] lg:right-0 lg:[mask-image:none] dark:[mask-image:linear-gradient(transparent,white,transparent)] lg:dark:[mask-image:linear-gradient(white,white,transparent)]">
-              {/*<HeroBackground className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-0 lg:translate-x-0 lg:translate-y-[-60%]" />*/}
+              <HeroBackground className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-0 lg:translate-x-0 lg:translate-y-[-60%]" />
             </div>
             <div className="relative">
               <img
@@ -88,15 +91,15 @@ export function Hero() {
               />
               <img
                 className="absolute -bottom-40 -right-44"
-                src={blurIndigoImage}
+                src={blurpurpleImage}
                 alt=""
                 width={567}
                 height={567}
               />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10 blur-lg" />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-fuchsia-300 via-fuchsia-300/70 to-blue-300 opacity-10 blur-lg" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-fuchsia-300 via-fuchsia-300/70 to-blue-300 opacity-10" />
               <div className="relative rounded-2xl bg-[#0A101F]/80 ring-1 ring-white/10 backdrop-blur">
-                <div className="absolute -top-px left-20 right-11 h-px bg-gradient-to-r from-sky-300/0 via-sky-300/70 to-sky-300/0" />
+                <div className="absolute -top-px left-20 right-11 h-px bg-gradient-to-r from-fuchsia-300/0 via-fuchsia-300/70 to-fuchsia-300/0" />
                 <div className="absolute -bottom-px left-11 right-20 h-px bg-gradient-to-r from-blue-400/0 via-blue-400 to-blue-400/0" />
                 <div className="pl-4 pt-4">
                   <TrafficLightsIcon className="h-2.5 w-auto stroke-slate-500/30" />
@@ -107,7 +110,7 @@ export function Hero() {
                         className={clsx(
                           'flex h-6 rounded-full',
                           tab.isActive
-                            ? 'bg-gradient-to-r from-sky-400/30 via-sky-400 to-sky-400/30 p-px font-medium text-sky-300'
+                            ? 'bg-gradient-to-r from-fuchsia-400/30 via-fuchsia-400 to-fuchsia-400/30 p-px font-medium text-fuchsia-300'
                             : 'text-slate-500',
                         )}
                       >
