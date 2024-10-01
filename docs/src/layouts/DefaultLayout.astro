@@ -17,7 +17,7 @@ const { title } = Astro.props;
 </head>
 <body class="flex min-h-full bg-white dark:bg-slate-900">
 <div class="flex w-full flex-col">
-  <Layout>
+  <Layout client:load>
     <slot />
   </Layout>
 </div>

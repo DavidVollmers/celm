@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 import { Hero } from './Hero';
 import { ThemeSelector } from './ThemeSelector.tsx';
+import { ThemeProvider } from 'next-themes';
 // import { Logo, Logomark } from '@/components/Logo';
 // import { MobileNavigation } from '@/components/MobileNavigation';
 // import { Navigation } from '@/components/Navigation';
@@ -65,7 +66,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="flex w-full flex-col">
-      {/*<Header />*/}
+      <Header />
 
       {isHomePage && <Hero />}
 
@@ -78,7 +79,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
             {/*<Navigation />*/}
           </div>
         </div>
-        {children}
+        <ThemeProvider attribute="class" disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </div>
     </div>
   );
