@@ -9,7 +9,7 @@
 
 ## Why Celm?
 
-Celm (`/siː ɛlm/`) is a modern and lightweight library for creating custom elements. At it's core is a simple API that
+Celm (`/siː ɛlm/`) is a modern and lightweight library for creating custom elements. At its core is a simple API that
 provides reactivity, scoped styles and JSX support for building powerful web applications, scalable design systems and
 reusable components.
 
