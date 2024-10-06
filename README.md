@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/public/assets/logo.svg" alt="Lit" height="141">
+<img src="docs/public/logo.svg" alt="Lit" height="141">
 
 ### Custom elements done right.
 

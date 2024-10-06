@@ -4,10 +4,7 @@ import clsx from 'clsx';
 import { Hero } from './Hero';
 import { ThemeSelector } from './ThemeSelector.tsx';
 import { ThemeProvider } from 'next-themes';
-// import { Logo, Logomark } from '@/components/Logo';
-// import { MobileNavigation } from '@/components/MobileNavigation';
-// import { Navigation } from '@/components/Navigation';
-// import { Search } from '@/components/Search';
+import { Logo } from './Logo.tsx';
 
 function GitHubIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -44,8 +41,7 @@ function Header() {
       <div className="mr-6 flex lg:hidden">{/*<MobileNavigation />*/}</div>
       <div className="relative flex flex-grow basis-0 items-center">
         <a href="/" aria-label="Home page">
-          {/*<Logomark className="h-9 w-9 lg:hidden" />*/}
-          {/*<Logo className="hidden h-9 w-auto fill-slate-700 lg:block dark:fill-fuchsia-100" />*/}
+          <Logo className="h-9 w-auto" />
         </a>
       </div>
       <div className="-my-5 mr-6 sm:mr-8 md:mr-0">{/*<Search />*/}</div>
