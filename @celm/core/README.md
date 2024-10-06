@@ -1,7 +1,7 @@
 ## @celm/core
 
-This is the core package of the Celm library. It contains the core functionality to create simple and lightweight custom
-elements.
+This is the core package of the Celm framework. It contains the core functionality to create simple and lightweight
+custom elements.
 
 ### Documentation
 
