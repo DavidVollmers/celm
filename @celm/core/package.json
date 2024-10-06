@@ -1,6 +1,15 @@
 {
   "name": "@celm/core",
   "version": "0.1.0-preview",
+  "description": "Core package of the Celm framework",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DavidVollmers/celm.git",
+    "directory": "@celm/core"
+  },
+  "author": "David Vollmers",
+  "homepage": "https://github.com/DavidVollmers/celm",
   "dependencies": {},
   "type": "module",
   "main": "./index.js",

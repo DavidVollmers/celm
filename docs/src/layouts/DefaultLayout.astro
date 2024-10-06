@@ -1,0 +1,25 @@
+---
+import { Layout } from '../components/Layout';
+const { title } = Astro.props;
+---
+<html lang="en" class="h-full antialiased">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&display=swap"
+    rel="stylesheet">
+</head>
+<body class="flex min-h-full bg-white dark:bg-slate-900">
+<div class="flex w-full flex-col">
+  <Layout client:load>
+    <slot />
+  </Layout>
+</div>
+</body>
+</html>

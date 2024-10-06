@@ -1,6 +1,15 @@
 {
   "name": "@celm/jsx",
   "version": "0.1.0-preview",
+  "description": "JSX pragma for building custom elements with the Celm framework",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DavidVollmers/celm.git",
+    "directory": "@celm/jsx"
+  },
+  "author": "David Vollmers",
+  "homepage": "https://github.com/DavidVollmers/celm",
   "dependencies": {
     "@celm/core": "0.1.0-preview"
   },

@@ -7,3 +7,6 @@ dist
 *.ico
 *.template
 *.txt
+*.astro
+*.png
+*.svg
